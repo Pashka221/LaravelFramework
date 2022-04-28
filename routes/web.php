@@ -82,3 +82,31 @@ Route::redirect('admin/web','color');
 Route::get('color/{hex}',function ($hex){
    return "<div style='background-color: $hex; width:150px ; height:150px;border: solid red 1px'></div> Color-$hex";
 })->where('hex','[A-Fa-f0-9]{6}');
+
+Route::get("my-route",[\App\Http\Controllers\TestController::class,'LessonOne']);
+Route::get("data",[\App\Http\Controllers\TestController::class,'LessonTwo']);
+
+//1
+Route::get('my-one',[\App\Http\Controllers\TestController::class,'ExerciseOne']);
+//2
+Route::get('my-two/{name}',[\App\Http\Controllers\TestController::class,'ExerciseTwo']);
+//3
+Route::get('my-three/{name}&{item}',[\App\Http\Controllers\TestController::class,'ExerciseThree']);
+//4
+Route::get('my-four',[\App\Http\Controllers\TestController::class,'ExerciseFour']);
+//5
+Route::get('my-five/{a}&{b}',[\App\Http\Controllers\TestController::class,'ExerciseFive']);
+//6
+Route::get('my-six/{cipher}',[\App\Http\Controllers\TestController::class,'ExerciseSix']);
+
+
+Route::get('template/{detach}', [\App\Http\Controllers\TestController::class, 'lessonTemplateOne']);
+
+//1
+Route::get('template', [\App\Http\Controllers\TestController::class, 'LessonTemplateZadanieOne']);
+//2
+Route::get('zadanieTwo/{organization}', [\App\Http\Controllers\TestController::class, 'LessonTemplateZadanieTwo']);
+//3
+Route::get('zadanieThree/{name}', [\App\Http\Controllers\TestController::class, 'LessonTemplateZadanieThree']);
+//4,5,6
+Route::get('zadanieOK/', [\App\Http\Controllers\TestController::class, 'LessonTemplateZadanieFourFiveSix']);
