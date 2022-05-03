@@ -110,3 +110,9 @@ Route::get('zadanieTwo/{organization}', [\App\Http\Controllers\TestController::c
 Route::get('zadanieThree/{name}', [\App\Http\Controllers\TestController::class, 'LessonTemplateZadanieThree']);
 //4,5,6
 Route::get('zadanieOK/', [\App\Http\Controllers\TestController::class, 'LessonTemplateZadanieFourFiveSix']);
+
+//03.05.22
+Route::view('/', "mainpage")->name("Главная");
+Route::view('/News', "NewPost")->name("Новость");
+Route::view('/aut', "login")->name("Авторизация");
+Route::view('/ls', "Cabinet")->name("Личный кабинет");
